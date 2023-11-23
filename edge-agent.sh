@@ -4,6 +4,8 @@ set -e
 docker stop portainer_edge_agent
 docker rm portainer_edge_agent
 
+docker pull portainer/agent:latest
+
 docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
     -v /var/lib/docker/volumes:/var/lib/docker/volumes  \
     -v /:/host -v portainer_agent_data:/data \
